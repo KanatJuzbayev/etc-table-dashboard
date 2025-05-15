@@ -26,11 +26,11 @@ function TabPanel({
 }
 
 const phaseLabels = [
-  "Фаза 1 – Заявка",
-  "Фаза 2 – Планирование",
-  "Фаза 3 – Источник",
-  "Фаза 4 – Доп. данные",
-  "Фаза 5 – Итог",
+  "Спрос",
+  "План оптимизатора",
+  "Проект плана",
+  "Согласованный план",
+  "Факт",
 ];
 
 const phaseColors = {
@@ -230,7 +230,7 @@ const Dashboard: FC = () => {
                       {String(
                         mockData[0][
                           `${phase}_wagonsRequested` as keyof (typeof mockData)[0]
-                        ] || "N/A",
+                        ] || "N/A"
                       )}
                     </span>
                   </div>
@@ -240,7 +240,7 @@ const Dashboard: FC = () => {
                       {String(
                         mockData[0][
                           `${phase}_client` as keyof (typeof mockData)[0]
-                        ] || "N/A",
+                        ] || "N/A"
                       )}
                     </span>
                   </div>
@@ -250,7 +250,7 @@ const Dashboard: FC = () => {
                       {String(
                         mockData[0][
                           `${phase}_psType` as keyof (typeof mockData)[0]
-                        ] || "N/A",
+                        ] || "N/A"
                       )}
                     </span>
                   </div>

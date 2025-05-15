@@ -47,7 +47,7 @@ const TableHeader = ({
   table: MRT_TableInstance<LogisticsRow>;
   handleClick: (
     leaves: MRT_Column<LogisticsRow, unknown>[],
-    allVisible: boolean,
+    allVisible: boolean
   ) => void;
 }) => {
   const leaves = table
@@ -55,7 +55,7 @@ const TableHeader = ({
     .filter((c) => c.id.startsWith(`${phase}_`));
 
   const allVisible = leaves.every(
-    (c) => table.getState().columnVisibility[c.id],
+    (c) => table.getState().columnVisibility[c.id]
   );
 
   return (
@@ -79,7 +79,7 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
     allLeafKeys.forEach((k) => (vis[k] = true));
 
     ["stub", "stub2", "stub3", "stub4", "stub5"].forEach(
-      (s) => (vis[s] = false),
+      (s) => (vis[s] = false)
     );
 
     return vis;
@@ -90,7 +90,7 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
 
   const handleHeaderToggle = (
     leaves: MRT_Column<LogisticsRow, unknown>[],
-    allVisible: boolean,
+    allVisible: boolean
   ) => {
     const old = table.getState().columnVisibility;
     const newVis = { ...old };
@@ -120,13 +120,13 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
     () => [
       {
         id: "phase1",
-        header: "Фаза 1: Заявка",
+        header: "Спрос",
         Header: ({ table }) => (
           <TableHeader
             table={table}
             handleClick={handleHeaderToggle}
             phase="phase1"
-            header="Фаза 1: Заявка"
+            header="Спрос"
           />
         ),
         columns: [
@@ -147,13 +147,13 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
 
       {
         id: "phase2",
-        header: "Фаза 2: Планирование",
+        header: "План оптимизатора",
         Header: ({ table }) => (
           <TableHeader
             table={table}
             handleClick={handleHeaderToggle}
             phase="phase2"
-            header="Фаза 2: Планирование"
+            header="План оптимизатора"
           />
         ),
         columns: [
@@ -170,13 +170,13 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
 
       {
         id: "phase3",
-        header: "Фаза 3: Источник",
+        header: "Проект плана",
         Header: ({ table }) => (
           <TableHeader
             table={table}
             handleClick={handleHeaderToggle}
             phase="phase3"
-            header="Фаза 3: Источник"
+            header="Проект плана"
           />
         ),
         columns: [
@@ -193,13 +193,13 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
 
       {
         id: "phase4",
-        header: "Фаза 4: Доп. данные",
+        header: "Согласованный план",
         Header: ({ table }) => (
           <TableHeader
             table={table}
             handleClick={handleHeaderToggle}
             phase="phase4"
-            header="Фаза 4: Доп. данные"
+            header="Согласованный план"
           />
         ),
         columns: [
@@ -215,13 +215,13 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
 
       {
         id: "phase5",
-        header: "Фаза 5: Итог",
+        header: "Факт",
         Header: ({ table }) => (
           <TableHeader
             table={table}
             handleClick={handleHeaderToggle}
             phase="phase5"
-            header="Фаза 5: Итог"
+            header="Факт"
           />
         ),
         columns: [
@@ -236,7 +236,7 @@ const GroupedTable: FC<{ data: LogisticsRow[] }> = ({ data }) => {
         ],
       },
     ],
-    [],
+    []
   );
 
   const table = useMaterialReactTable<LogisticsRow>({
