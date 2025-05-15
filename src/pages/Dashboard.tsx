@@ -230,6 +230,7 @@ const Dashboard: FC = () => {
                       {String(
                         mockData[0][
                           `${phase}_wagonsRequested` as keyof (typeof mockData)[0]
+                          // eslint-disable-next-line prettier/prettier
                         ] || "N/A"
                       )}
                     </span>
@@ -240,6 +241,7 @@ const Dashboard: FC = () => {
                       {String(
                         mockData[0][
                           `${phase}_client` as keyof (typeof mockData)[0]
+                          // eslint-disable-next-line prettier/prettier
                         ] || "N/A"
                       )}
                     </span>
@@ -250,6 +252,7 @@ const Dashboard: FC = () => {
                       {String(
                         mockData[0][
                           `${phase}_psType` as keyof (typeof mockData)[0]
+                          // eslint-disable-next-line prettier/prettier
                         ] || "N/A"
                       )}
                     </span>
